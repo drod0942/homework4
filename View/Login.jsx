@@ -60,25 +60,25 @@ const Login = ({ onFormSwitch, onLogin }) => {
 
 const styles = StyleSheet.create({
     app: {
- 
+
     },
     title: {
-        
+
     },
     formGroup: {
-     
+
     },
     input: {
 
     },
     error: {
-  
+
     },
     button: {
 
     },
     RegForm: {
-        
+
     }
 });
 

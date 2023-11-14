@@ -12,6 +12,7 @@ export default function App() {
   const [currentForm, setCurrentForm] = useState('login');
   const [loggedIn, setLoggedIn] = useState(false);
   const [songs, setSongs] = useState([]);
+  const [showSongRatingForm, setShowSongRatingForm] = useState(false);
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -29,6 +30,10 @@ export default function App() {
     setLoggedIn(false);
   }
 
+  // Function to toggle the SongRatingForm
+  const toggleSongRatingForm = () => {
+    setShowSongRatingForm(!showSongRatingForm);
+  };
 
   // Initial data fetching when component mounts
   useEffect(() => {
@@ -44,6 +49,10 @@ export default function App() {
           <Text style={styles.title}>Hardcore Music App</Text>
           <DataDisplay songs={songs} setSongs={setSongs} />
           {/* Other components for logged-in state */}
+          {/* Button to toggle SongRatingForm */}
+          <TouchableOpacity onPress={toggleSongRatingForm} style={styles.button}>
+            <Text>{showSongRatingForm ? 'Hide Rating Form' : 'Create Rating'}</Text>
+          </TouchableOpacity>
 
           {/* Conditional rendering of SongRatingForm */}
           {showSongRatingForm && (

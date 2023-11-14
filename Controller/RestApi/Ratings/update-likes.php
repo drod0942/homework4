@@ -2,12 +2,14 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+
 include_once '../../../Model/database.php';
 include_once '../../../Model/ratings.php';
 
 $database = new Database();
 $db = $database->getConnection();
 $item = new Ratings($db);
+
 
 $data = json_decode(file_get_contents("php://input"));
 

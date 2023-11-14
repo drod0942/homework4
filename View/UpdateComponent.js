@@ -55,17 +55,17 @@ const UpdateComponent = ({ songDetails, updateSong, goBack }) => {
 
 const styles = StyleSheet.create({
     container: {
-   
+
     },
     input: {
-    
+
     },
     buttonContainer: {
-      
+
     },
 
     errorText: {
-      
+
     },
 });
 
