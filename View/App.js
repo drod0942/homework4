@@ -83,16 +83,30 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-
+    width: '100%',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#000',
+    paddingTop: 60,
+    paddingBottom: 150,
   },
   title: {
-
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
   },
   dataAndForm: {
-
+    width: '100%',
+    alignItems: 'center',
   },
   button: {
-
+    alignItems: 'center',
+    backgroundColor: '#d69f09',
+    padding: 15,
+    paddingLeft: 40,
+    paddingRight: 40,
+    marginTop: 10,
   },
 });
 

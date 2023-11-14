@@ -79,22 +79,32 @@ const Register = ({ onFormSwitch, onRegister }) => {
 
 const styles = StyleSheet.create({
     container: {
-
+        padding: 20,
     },
     input: {
-
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 10,
+        padding: 10,
+        backgroundColor: '#fff',
     },
     title: {
-
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        color: '#fff',
     },
     button: {
-
+        marginTop: 10,
+        padding: 10,
     },
     error: {
-
+        color: 'red',
+        marginBottom: 10,
     },
     LogForm: {
-
+        color: '#fff',
     },
 });
 

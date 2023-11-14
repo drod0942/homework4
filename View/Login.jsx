@@ -60,25 +60,35 @@ const Login = ({ onFormSwitch, onLogin }) => {
 
 const styles = StyleSheet.create({
     app: {
-
+        padding: 20,
     },
     title: {
-
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        color: '#fff',
     },
     formGroup: {
-
+        marginBottom: 10,
     },
     input: {
-
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 10,
+        padding: 10,
+        backgroundColor: '#fff',
     },
     error: {
-
+        color: 'red',
+        marginBottom: 10,
     },
     button: {
-
+        marginTop: 10,
+        padding: 10,
     },
     RegForm: {
-
+        color: '#fff',
     }
 });
 

@@ -145,38 +145,60 @@ const DataDisplay = ({ songs, setSongs }) => {
     );
 };
 
+
 const styles = StyleSheet.create({
     container: {
-
+        width: '100%',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
 
     },
     flatList: {
-
+        width: '85%',
     },
     header: {
-
+        fontSize: 16,
+        color: '#fff',
+        marginBottom: 20,
     },
     bold: {
+        fontWeight: 'bold',
     },
     title: {
-
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#F0F0F0',
+        marginBottom: 20,
     },
     row: {
-
+        backgroundColor: '#1E1E1E', // Card background1E1E1E
+        borderRadius: 8,
+        padding: 16,
+        marginVertical: 8,
+        width: '100%',
+        alignSelf: 'center',
     },
     cell: {
-
+        fontSize: 14,
+        color: '#fff',
+        margin: 5,
     },
     cellIcons: {
-
+        flexDirection: 'row', // Align items horizontally
+        justifyContent: 'flex-end', // Adjust spacing between items
+        alignItems: 'center', // Center items vertically in the container
     },
 
     trashIcon: {
-
+        paddingLeft: 10,
     },
 
     icon: {
-
+        width: 24,
+        height: 24,
+        marginRight: 8,
     },
 });
 

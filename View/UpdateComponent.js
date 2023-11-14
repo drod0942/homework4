@@ -55,17 +55,25 @@ const UpdateComponent = ({ songDetails, updateSong, goBack }) => {
 
 const styles = StyleSheet.create({
     container: {
-
+        width: '80%',
+        padding: 10,
     },
     input: {
-
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 10,
+        padding: 10,
+        backgroundColor: '#fff',
     },
     buttonContainer: {
-
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
 
     errorText: {
-
+        color: 'red',
+        marginBottom: 10,
     },
 });
 

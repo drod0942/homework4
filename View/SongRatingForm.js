@@ -72,13 +72,21 @@ const SongRatingForm = ({ setSongs }) => {
 
 const styles = StyleSheet.create({
     container: {
-
+        padding: 20
     },
     title: {
-
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        color: '#fff',
     },
     input: {
-
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 10,
+        padding: 10,
+        backgroundColor: '#fff',
     },
 
 });
