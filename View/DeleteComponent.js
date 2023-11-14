@@ -15,13 +15,18 @@ const DeleteComponent = ({ songDetails, deleteSong, goBack }) => {
 
 const styles = StyleSheet.create({
     container: {
-
+        padding: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     text: {
-
+        marginBottom: 20,
+        color: '#fff',
     },
     buttonContainer: {
-
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%'
     }
 });
 
