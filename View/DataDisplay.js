@@ -4,13 +4,13 @@ import axios from 'axios';
 import { useUser } from './UserContext'; // Make sure UserContext is adapted for React Native
 import UpdateComponent from './UpdateComponent'; // Adapt this for React Native
 import DeleteComponent from './DeleteComponent'; // Adapt this for React Native
-
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const DataDisplay = ({ songs, setSongs }) => {
     const { user } = useUser();
     const [mode, setMode] = useState('display');
     const [selectedSong, setSelectedSong] = useState(null);
- 
+    const [likedSongs, setLikedSongs] = useState(new Set());
 
 
     const updateSong = async (songId, songUpdate) => {
@@ -51,10 +51,48 @@ const DataDisplay = ({ songs, setSongs }) => {
     }
 
 
+    const handleLike = async (song) => {
+        try {
+            const response = await axios.post(`http://129.133.190.217/homework3/Controller/RestApi/Ratings/update-likes.php`, {
+                id: song.id,
+                username: user
+            });
+
+            if (response.data.action === "liked") {
+                setLikedSongs(new Set([...likedSongs, song.id]));
+            } else if (response.data.action === "unliked") {
+                const newLikedSongs = new Set(likedSongs);
+                newLikedSongs.delete(song.id);
+                setLikedSongs(newLikedSongs);
+            }
+
+            // Refresh the list to show updated likes
+            const res = await axios.get(`http://129.133.190.217/homework3/Controller/RestApi/Ratings/Read_ratings.php`);
+            setSongs(res.data.body || []);
+        } catch (error) {
+            console.error("Error updating likes: ", error);
+        }
+    };
+
+
+
+
 
     const renderItem = ({ item }) => (
         // console.log(`Song ID: ${item.id}, Liked: ${likedSongs.has(item.id)}`),
         < View style={styles.row} >
+            <View style={styles.cellIcons}>
+                <Text style={styles.cell}>{item.likes}</Text>
+                <TouchableOpacity onPress={() => handleLike(item)}>
+                    <Icon
+                        name={likedSongs.has(item.id) ? "thumbs-up" : "thumbs-up"} // Change icon name based on like status
+                        solid={likedSongs.has(item.id)} // When solid is true, the solid version of the icon is used
+                        size={18}
+                        color="#fff"
+                        style={styles.icon}
+                    />
+                </TouchableOpacity>
+            </View>
             <Text style={styles.cell}>Posted by {item.username}</Text>
             <Text style={styles.cell}>{item.song} by {item.artist}</Text>
             <Text style={styles.cell}>
@@ -107,7 +145,6 @@ const DataDisplay = ({ songs, setSongs }) => {
     );
 };
 
-
 const styles = StyleSheet.create({
     container: {
 
@@ -117,7 +154,7 @@ const styles = StyleSheet.create({
 
     },
     header: {
-  
+
     },
     bold: {
     },
@@ -135,7 +172,7 @@ const styles = StyleSheet.create({
     },
 
     trashIcon: {
-      
+
     },
 
     icon: {

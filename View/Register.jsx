@@ -79,22 +79,22 @@ const Register = ({ onFormSwitch, onRegister }) => {
 
 const styles = StyleSheet.create({
     container: {
-      
+
     },
     input: {
-       
+
     },
     title: {
-        
+
     },
     button: {
-       
+
     },
     error: {
-      
+
     },
     LogForm: {
-  
+
     },
 });
 
